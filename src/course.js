@@ -1,7 +1,7 @@
 const courses =({courses}) => {   
     return (
       <ul className='coursesList'>
-        { courses.map(course =>
+        {courses.map(course =>
              <li key={course.name}>{course.name}</li>
         )}
       </ul>
