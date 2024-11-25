@@ -1,7 +1,8 @@
 
 import './App.css';
-
-function App() {
+import Footer from './footer';
+import Header from './header';
+function CoursesList() {
   const courses = [
     {
       name: 'javascript'
@@ -17,7 +18,7 @@ function App() {
     }
   ]
   const jsx = (
-    <ul>
+    <ul className='coursesList'>
       { courses.map(course =>
            <li key={course.name}>{course.name}</li>
       )}
@@ -28,6 +29,16 @@ function App() {
       {jsx}
     </>
   )
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <CoursesList />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
