@@ -2,34 +2,7 @@
 import './App.css';
 import Footer from './footer';
 import Header from './header';
-function CoursesList() {
-  const courses = [
-    {
-      name: 'javascript'
-    },
-    {
-      name: 'React'
-    },
-    {
-      name: 'Node.js'
-    },
-    {
-      name: 'Python'
-    }
-  ]
-  const jsx = (
-    <ul className='coursesList'>
-      { courses.map(course =>
-           <li key={course.name}>{course.name}</li>
-      )}
-    </ul>
-  )
-  return (
-    <>
-      {jsx}
-    </>
-  )
-}
+import CoursesList from './course'
 
 function App() {
   return (
