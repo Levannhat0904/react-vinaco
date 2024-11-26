@@ -1,4 +1,4 @@
-const reputation = ({ data }) => {
+const reputation = ( {data} ) => {
   return (
     <div className="reputation">
       <h2>Our Reputation</h2>

@@ -12,7 +12,7 @@ function App() {
     <div className='App'>
       <Header/>
       <nav className='navbar'>
-        <ul className='navbar-list'>
+        <ul className='navbar-list mt-100'>
           <li className='navbar-item'> <Link className='navbar-item-link' to='/day2'> Day2 </Link></li>
           <li className='navbar-item'> <Link className='navbar-item-link' to='/day3'> Day3 </Link></li>
           <li className='navbar-item'> <Link className='navbar-item-link' to='/day4'> Day4 </Link></li>

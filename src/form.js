@@ -1,4 +1,8 @@
 const form = () => {
+  function Box({ children }) {
+    return <div className="box">{children}</div>;
+  }
+  
   return (
     <>
       <form className="form-input">
