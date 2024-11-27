@@ -1,18 +1,23 @@
+
 import { useState } from "react";
 function Day6(){
     const courses =[
         {name: 'React', id: 1},
         {name: 'JavaScript', id: 2},
         {name: 'HTML', id: 3},
-        {name: 'CSS', id: 4},
-        {name: 'Python', id: 5},
-        {name: 'Django', id: 6},
-        {name: 'Node.js', id: 6},
-        {name: 'Express.js', id: 7},
+        {name: 'CSS', id: 4}
     ]
-    const [selectedCourse, setSelectedCourse] = useState()
+    const coursesCheckBox =[
+        {name: 'React', id: 1},
+        {name: 'JavaScript', id: 2},
+        {name: 'HTML', id: 3},
+        {name: 'CSS', id: 4}
+    ]
+    const [selectedCourse, setSelectedCourse] = useState(1)
+    const [checkBox, setcheckBox] = useState([])
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    console.log(checkBox)
     const handleSubmit = () => {
         if(name && email){
             alert(`Welcome ${name}, your email is ${email}`)
@@ -23,6 +28,17 @@ function Day6(){
         setEmail('')
  
     }
+    const handleCheckBox = (id) => {
+        setcheckBox(prev=>{
+            if(checkBox.includes(id)){
+                return checkBox.filter(item =>item !==id)
+            } else {
+                return [...prev, id]
+            }
+        })
+ 
+    }
+    
     return (
         <div>
            <input 
@@ -34,11 +50,21 @@ function Day6(){
             onChange={(e) => setEmail(e.target.value)}
            />
             <h2>Course List</h2>
+            {coursesCheckBox.map((course, index) => (
+                <div key={index}>
+                   <input type="checkbox"
+                   checked={checkBox.includes(course.id) }
+                   onChange={()=>handleCheckBox(course.id)}
+                   /> 
+                        {course.name}
+                </div>
+            ))}
             {courses.map((course, index) => (
                 <div key={index}>
                    <input type="radio"
-                   onChange={()=>selectedCourse(course.id)}
-                   />
+                   checked={selectedCourse === course.id }
+                   onChange={()=>setSelectedCourse(course.id)}
+                   /> 
                         {course.name}
                 </div>
             ))}
