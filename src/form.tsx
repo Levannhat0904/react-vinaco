@@ -1,5 +1,8 @@
-const form = () => {
-  function Box({ children }) {
+interface Ichildren {
+  children: string;
+}
+const Form = () => {
+  function Box({ children }:Ichildren) {
     return <div className="box">{children}</div>;
   }
   
@@ -15,4 +18,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default Form;

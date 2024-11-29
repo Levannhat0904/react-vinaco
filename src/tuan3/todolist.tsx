@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
+type evenType = React.ChangeEvent<HTMLInputElement> 
 const TodoList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
+  const [tasks, setTasks] = useState<string[]>([]);
+  const [newTask, setNewTask] = useState<string>("");
 
   const addTask = () => {
     if (newTask.trim() !== "") {
@@ -12,7 +12,7 @@ const TodoList = () => {
   };
 
   // Hàm xử lý thay đổi trong ô input
-  const handleChange = (event) => {
+  const handleChange = (event:evenType) => {
     setNewTask(event.target.value);
   };
 

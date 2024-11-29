@@ -1,5 +1,15 @@
-
+import React from 'react';
 import { useState } from "react";
+interface Course {
+    name: string;
+    id:number;
+}
+interface IProps{
+    courses: Course[];
+    id:number;
+    prev:number;
+}
+type IdType = number; 
 function Day6(){
     const courses =[
         {name: 'React', id: 1},
@@ -14,7 +24,7 @@ function Day6(){
         {name: 'CSS', id: 4}
     ]
     const [selectedCourse, setSelectedCourse] = useState(1)
-    const [checkBox, setcheckBox] = useState([])
+    const [checkBox, setcheckBox] = useState<IdType[]>([]); 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     console.log(checkBox)
@@ -28,7 +38,7 @@ function Day6(){
         setEmail('')
  
     }
-    const handleCheckBox = (id) => {
+    const handleCheckBox = (id:IdType) => {
         setcheckBox(prev=>{
             if(checkBox.includes(id)){
                 return checkBox.filter(item =>item !==id)

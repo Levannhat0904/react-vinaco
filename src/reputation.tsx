@@ -1,4 +1,11 @@
-const reputation = ( {data} ) => {
+interface Reputation {
+  value: number; 
+  title: string;
+}
+interface Props {
+  data: Reputation[];
+}
+const Feputation = ( {data}:Props ) => {
   return (
     <div className="reputation">
       <h2>Our Reputation</h2>
@@ -13,4 +20,4 @@ const reputation = ( {data} ) => {
   );
 };
 
-export default reputation;
+export default Feputation;
