@@ -32,8 +32,6 @@ const components = {
   Day6W4: Day6W4,
 } as const;
 
-
-
 function App() {
   return (
     <div className="App">
@@ -80,24 +78,26 @@ function App() {
         <Route path='/day6W4' element={<Day6W4 />} />
       </Routes> */}
       {/*  { id: 'W4', days: [2, 3, 4, 5, 6] }, */}
-      <Routes>
-        {weeks.map((week) =>
-          week.days.map((day) => {
-            console.log("week.id = ", week.id);
-            console.log("day = ", day);
-            const key = `Day${day}${week.id}` as keyof typeof components;
-            const Component = components[key];
-            return (
-              <Route
-                key={`route-day${day}${week.id}`}
-                path={`/day${day}${week.id}`}
-                element={<Component />}
-              />
-            );
-          })
-        )}
-      </Routes>
-      <Footer />
+      <div className="content">
+        <Routes>
+          {weeks.map((week) =>
+            week.days.map((day) => {
+              // console.log("week.id = ", week.id);
+              // console.log("day = ", day);
+              const key = `Day${day}${week.id}` as keyof typeof components;
+              const Component = components[key];
+              return (
+                <Route
+                  key={`route-day${day}${week.id}`}
+                  path={`/day${day}${week.id}`}
+                  element={<Component />}
+                />
+              );
+            })
+          )}
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }

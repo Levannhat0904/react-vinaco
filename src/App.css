@@ -98,6 +98,9 @@ li{
 .reputation-item{
   list-style-type: none;
 }
+.content{
+  margin-bottom: 200px;
+}
 .footer{
   background-color: rgb(240, 230, 166);
   color: white;
